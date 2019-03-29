@@ -18,6 +18,7 @@ Since this is a proof of concept which I hacked in an hour for fun, I used the m
   ## Algorithm
     * Extract every nth frame from the video, resize it to (tx,ty) and store it in a directory
     * Find colour histograms of extracted images and store them in a pickle file
-    * Iterate over the poster while comparing the histogram of every consecutive block of size (tx,ty) with the histograms stored in the pickle file. Replace that block with the most similar scene. 
+    * Iterate over the poster while comparing the histogram of every consecutive block of size (tx,ty) with the histograms stored in the pickle file. 
+    * Replace that block with the most similar scene. 
 
 Feel free to experiment with different histogram comparison methods or image similarity measures. 
