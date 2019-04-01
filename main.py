@@ -33,7 +33,7 @@ try:
     os.mkdir(dataPath)
 except:
     dataPath = os.path.splitext(os.path.basename(args["videoPath"]))[0] + "/"
-    
+  
 while True:
     cap.set(0,84000+skip)
     skip+=5500
@@ -52,8 +52,9 @@ for imagePath in list_images(dataPath):
 	image = cv2.imread(imagePath)
 	features = desc.describe(image)
 	index[k] = features
-	
-f = open("index" + os.path.splitext(os.path.basename(args["videoPath"]))[0] + ".cpickle", "wb")
+
+indexPath = "index" + os.path.splitext(os.path.basename(args["videoPath"]))[0] + ".cpickle"    
+f = open(indexPath, "wb")
 f.write(pickle.dumps(index))
 f.close()
  
@@ -66,7 +67,7 @@ print(img.shape)
 fin = np.zeros((ix,iy,3))
 print(fin.shape)
 
-index = pickle.loads(open("index.cpickle", "rb").read())
+index = pickle.loads(open(indexPath, "rb").read())
 searcher = si.Searcher(index)
 
 for i in range(0,ix,tx):
