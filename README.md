@@ -22,3 +22,6 @@ Since this is a proof of concept which I hacked in an hour for fun, I used the m
     * Replace that block with the most similar scene. 
 
 Feel free to experiment with different histogram comparison methods or image similarity measures. 
+
+## License
+See the [LICENSE](LICENSE.md) file for license rights and limitations (MIT).
